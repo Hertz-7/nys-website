@@ -1,0 +1,37 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: auto; /* Prevent scrollbars */
+  }
+
+  em {
+    font-family: "Super-Display-Light-Italic", serif;}
+  
+  .text-side {
+    display: flex;
+    align-items: center; /* Aligns the text vertically */
+    justify-content: center; /* Aligns the text horizontally */
+    box-sizing: border-box; /* Includes padding in the width */
+    font-family: "FuturaBT Light", "Trebuchet MS", "Arial", "sans-serif sans-serif";
+    font-size: calc(33px + (50 - 33)*(100vw - 390px)/(1920 - 390));
+    line-height: 1.1;
+    font-weight: 50;
+    margin: 0.4em 0;
+    height: 100%;
+  }
+  
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Cover the entire area without losing aspect ratio */
+    color: black;
+  }
+
+  .MuiGrid-container display-grid{
+    z-index: 1 !important; 
+    position: absolute !important;
+    left: 0px !important;
+    top: 0px    !important;
+    height: 100% !important;
+  }

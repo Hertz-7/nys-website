@@ -1,0 +1,37 @@
+
+  .body-container{
+    display: flex;
+    margin-top: 5%;
+    margin-left: 15%;
+    margin-right: 15%;
+    width: 70%;
+
+  }
+  .body-text:before {
+    content: "";
+    display: block;
+    background-color: #000000;
+    height: 1px;
+    width: 2em;
+    position: absolute;
+    left: -1.6em;
+    top: 0.7em;
+  }
+  /* .body-line {
+    content: "";
+    display: block;
+    background-color: #000000;
+    height: 1px;
+    width: 5rem;
+    margin-top: 2.7%;
+    margin-right: 3%;
+  } */
+  p{
+    
+    font-weight: 300;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+  }
