@@ -248,7 +248,7 @@ function Navbar(props) {
       <Box sx={{ flexGrow: 1 }}>  
       <CssBaseline />
       <HideOnScroll {...props}>
-        <AppBar position="relative" color='transparent' className="MuiAppBar-root">
+        <AppBar color='transparent' className="MuiAppBar-root" position="sticky">
           <Toolbar>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
               NY

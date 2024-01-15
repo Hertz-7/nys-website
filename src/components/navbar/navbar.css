@@ -1,15 +1,15 @@
-.navbar{
+/* .navbar{
     color: #fff !important;
     display: flex;
     position: sticky;
-}
-.MuiAppBar-root{
-    position: absolute !important;
-    left: 0px !important;
-    top: 0px    !important;
-    z-index: 2000 !important;
+} */
+ .MuiAppBar-root{
+    position: sticky !important;
+    /* left: 0px !important;
+    top: 0px    !important; */
+    z-index: 2000 !important; 
     box-shadow: none !important;
-} 
+}  
 .MuiLink-root{
     text-decoration: 'none'!important;
     display: 'block' !important; 
