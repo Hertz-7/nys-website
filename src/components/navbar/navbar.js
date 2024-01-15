@@ -9,6 +9,7 @@ import Drawer from '@mui/material/Drawer';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
+import CssBaseline from '@mui/material/CssBaseline';
 import { Grid, Accordion, AccordionSummary, AccordionDetails, Link } from '@mui/material';
 import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
@@ -16,8 +17,37 @@ import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import { styled } from '@mui/material/styles';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { RxCross1 } from "react-icons/rx";
+import PropTypes from 'prop-types';
+import Slide from '@mui/material/Slide';
+import useScrollTrigger from '@mui/material/useScrollTrigger';
+
 import './navbar.css';
-function Navbar() {
+
+function HideOnScroll(props) {
+  const { children, window } = props;
+  // Note that you normally won't need to set the window ref as useScrollTrigger
+  // will default to window.
+  // This is only being set here because the demo is in an iframe.
+  const trigger = useScrollTrigger({
+    target: window ? window() : undefined,
+  });
+
+  return (
+    <Slide appear={false} direction="down" in={!trigger}>
+      {children}
+    </Slide>
+  );
+}
+
+HideOnScroll.propTypes = {
+  children: PropTypes.element.isRequired,
+  /**
+   * Injected by the documentation to work in an iframe.
+   * You won't need it on your project.
+   */
+  window: PropTypes.func,
+};
+function Navbar(props) {
   const [drawerOpen, setDrawerOpen] = React.useState(false);
   const handleAccordionClick = (event) => {
     // Stop the click event from propagating up to the Drawer's onClose handler
@@ -107,7 +137,7 @@ function Navbar() {
       <Grid item xs={12} md={5 } order={{ xs: 1, md: 2 }} sx={{
         '& a': {
           textDecoration: 'none', // removes the underline from links
-          color: 'inherit', // the link color will be the same as the text color
+          color: 'grey', // the link color will be the same as the text color
           display: 'block', // makes each link take up its own line
           marginBottom: '0.35rem', // adds some space below each link
         }      }}>
@@ -179,8 +209,8 @@ function Navbar() {
       <Accordion expanded={expanded === 'panel5'} onChange={handleChange('panel5')} onClick={handleAccordionClick}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel4bh-content"
-          id="panel4bh-header"
+          aria-controls="panel5bh-content"
+          id="panel5bh-header"
         >
           <Typography sx={{ width: '33%', flexShrink: 0 }}>CAREERS</Typography>
         </AccordionSummary>
@@ -194,8 +224,8 @@ function Navbar() {
       <Accordion expanded={expanded === 'panel6'} onChange={handleChange('panel6')} onClick={handleAccordionClick}>
         <AccordionSummary
           expandIcon={<ExpandMoreIcon />}
-          aria-controls="panel4bh-content"
-          id="panel4bh-header"
+          aria-controls="panel6bh-content"
+          id="panel6bh-header"
         >
           <Typography sx={{ width: '33%', flexShrink: 0 }}>GROUP</Typography>
         </AccordionSummary>
@@ -215,7 +245,9 @@ function Navbar() {
 
   return (
     <>
-      <Box sx={{ flexGrow: 1 }}>
+      <Box sx={{ flexGrow: 1 }}>  
+      <CssBaseline />
+      <HideOnScroll {...props}>
         <AppBar position="relative" color='transparent' className="MuiAppBar-root">
           <Toolbar>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
@@ -233,6 +265,7 @@ function Navbar() {
             </IconButton>
           </Toolbar>
         </AppBar>
+      </HideOnScroll>
       </Box>
       <Drawer
         anchor='right'
