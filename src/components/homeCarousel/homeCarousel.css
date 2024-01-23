@@ -1,0 +1,12 @@
+.caption {
+    position: absolute;
+    right: 50%;
+    bottom: 50%;
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    color: #fff;
+    text-align: left;
+}
+.carousel {
+    position: relative;
+}

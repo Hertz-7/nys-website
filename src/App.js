@@ -6,10 +6,12 @@ import BodyText from './components/bodyText/bodyText';
 import HomePageAccordion from './components/homePageAccordion/homePageAccordion';
 import Footer from './components/footer/footer';
 import Grid from '@mui/material/Unstable_Grid2/Grid2';
+import Home from './pages/home';
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      <Home />
+      {/* <Navbar />
       <DisplayComponent />
       <BodyText />
     
@@ -20,7 +22,7 @@ function App() {
       <HomePageAccordion title="Construction" bodytext="LUV Studio’s construction is the process of constructing a building or infrastructure. Construction differs from manufacturing in that manufacturing typically involves mass production of similar items without a designated purchaser, while construction typically takes place on location for a known client."/>
       <HomePageAccordion title="Project Management" bodytext="LUV Studio’s project management is the process of leading the work of a team to achieve goals and meet success criteria at a specified time. The primary challenge of project management is to achieve all of the project goals within the given constraints."/>
       </div>
-      <Footer />
+      <Footer /> */}
     </div>
   );
 }
