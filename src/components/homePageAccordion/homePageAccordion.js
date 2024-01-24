@@ -39,7 +39,7 @@ export default function CustomizedAccordions(props) {
   return (
     // <div className='accordion_container'>
     <Grid container  md={11} xs={11}  marginTop={0}>
-      <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
+      <Accordion sx={{width:"100%"}} expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
         
           <Typography variant="h5">{props.title}</Typography>
