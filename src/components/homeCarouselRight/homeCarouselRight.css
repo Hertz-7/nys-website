@@ -1,3 +1,35 @@
 .carousel-container{
     margin-bottom: 2% !important;
 }
+  .text-content {
+    padding-left: 2%;
+  }
+  
+  .carousel-image-container {
+    position: relative;
+    display: inline-block;
+    padding: 0 0.5% 0 0;
+  }
+  
+  .flickity-carousel-caption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 99.5%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* semi-transparent black */
+    color: white;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    opacity: 0;
+    transition: opacity 0.5s ease; /* smooth fade-in effect */
+    padding: 10px;
+    box-sizing: border-box; /* ensures padding doesn't affect size */
+    text-align: center; /* centers the text horizontally */
+  }
+  
+  .carousel-image-container:hover .flickity-carousel-caption {
+    opacity: 1;
+  }
+  

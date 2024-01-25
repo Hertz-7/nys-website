@@ -12,42 +12,38 @@ import '@coreui/coreui/dist/css/coreui.min.css';
 import sample from './sample.mp4';
 import Test from './test.avif';
 import './homeCarouselRight.css';
+import Flickity from "react-flickity-component";
+
+import "./flickity.css";
 // Assume `sample` is the path to your video or imported video file
 
 const CustomLayout = () => {
+    const flickityOptions = {
+        pageDots: false, // This will hide the page dots
+        prevNextButtons: false,
+        contain: true,
+      };
+
   return (
     <div className="carousel-container">
     <CRow>
-      <CCol md={7}>
-        <CCarousel controls  transition="crossfade">
-          <CCarouselItem>
-          <CImage className="d-block w-100" src={Test} alt={`Slide `} />
-
-            <CCarouselCaption className=" d-none d-md-block">
-              <h1>First slide label</h1>
-              <h5>Some representative placeholder content for the first slide.</h5>
-            </CCarouselCaption>
-          </CCarouselItem>
-          <CCarouselItem>
-          <CImage className="d-block w-100" src={Test} alt={`Slide `} />
-
-            <CCarouselCaption className=" d-none d-md-block">
-              <h1>Second slide label</h1>
-              <h5>Some representative placeholder content for the first slide.</h5>
-            </CCarouselCaption>
-          </CCarouselItem>
-          <CCarouselItem>
-          <CImage className="d-block w-100" src={Test} alt={`Slide `} />
-
-            <CCarouselCaption className=" d-none d-md-block">
-              <h1>Second slide label</h1>
-              <h5>Some representative placeholder content for the first slide.</h5>
-            </CCarouselCaption>
-          </CCarouselItem>
-          {/* Repeat for other slides */}
-        </CCarousel>
+      <CCol md={8}>
+      <Flickity options={flickityOptions}>
+            <div className="carousel-image-container">
+              <img src="https://picsum.photos/800/500" />
+              <span className="flickity-carousel-caption">Caption 1</span>
+            </div>
+            <div className="carousel-image-container">
+              <img src="https://picsum.photos/800/500" />
+              <span className="flickity-carousel-caption">Caption 2</span>
+            </div>
+            <div className="carousel-image-container">
+              <img src="https://picsum.photos/800/500" />
+              <span className="flickity-carousel-caption">Caption 3</span>
+            </div>
+          </Flickity>
       </CCol>
-      <CCol md={5} className="my-auto">
+      <CCol md={4} className="my-auto">
         <div className="text-content">
           <h2>SELECTED APARTMENTS</h2>
           <p>City projects to step into a world of urban luxury, where high-rise living becomes a symphony of style, comfort, and sophistication.</p>

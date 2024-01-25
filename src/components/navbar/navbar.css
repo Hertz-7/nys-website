@@ -9,8 +9,8 @@
     top: 0px    !important; */
     z-index: 2000 !important; 
     box-shadow: none !important;
-    background-color: rgb(63, 63, 63) !important;
-    color: #ffffff !important;
+    background-color: rgb(255, 255, 255) !important;
+    color: #000000 !important;
 }  
 .MuiLink-root{
     text-decoration: 'none'!important;
