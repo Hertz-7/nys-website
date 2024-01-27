@@ -7,10 +7,12 @@ import HomePageAccordion from './components/homePageAccordion/homePageAccordion'
 import Footer from './components/footer/footer';
 import Grid from '@mui/material/Unstable_Grid2/Grid2';
 import Home from './pages/home';
+import Contact from './pages/contact';
 function App() {
   return (
     <div className="App">
-      <Home />
+      <Contact />
+      {/* <Home /> */}
       {/* <Navbar />
       <DisplayComponent />
       <BodyText />

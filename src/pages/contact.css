@@ -1,0 +1,116 @@
+.msgtext{
+    color: #000000;
+    font-size: 20px;
+}
+.msgtag{
+    font-size: 470%;
+    font-weight: 700;
+}
+@media (max-width: 574px){
+    .msgtag{
+        font-size: 350%;
+    }
+}
+
+.titlebooks{
+    display: flex;
+    align-self: center;
+    opacity: 2;
+    font-size: 86px;
+    font-weight: 700;
+    line-height: 103px;
+}
+.raabtabody{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+.text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 600px;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 600px;
+}
+/* .emailbody{
+    width: 400px;
+} */
+.form-control:focus {
+    border-color: #a3a3a3 !important; 
+    box-shadow: 0 0 0 0.2rem #a3a3a3 !important;
+} 
+.form-control{
+    border-radius: 5px;
+    border: 1px solid #f1f2f6;
+    background-color: #f1f2f6;
+}
+@media (max-width: 574px){
+    .form-control{
+        width: 80%;
+    }
+}
+.submitbtn{
+   
+    background-color:#000000;   
+    border-radius: 10px;
+    margin-right : 10px ;
+    width: 100px;
+    height:45px;
+    border: none;
+    color: #ffffff;
+}
+.submitbtn:hover{
+    background-color: #484848;
+    transition: 0.5s;
+}
+.social-section {
+    text-align: center;
+    margin: 50px 0; /* Adjust margin as needed */
+  }
+  
+  .social-header {
+    display: inline-block;
+    position: relative;
+    padding-bottom: 10px; /* Adjust space between text and underline */
+  }
+  
+
+  
+  .social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adjust the gap between links as needed */
+    padding-top: 10px; /* Adjust space between underline and links */
+  }
+  
+  .social-link {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 16px; /* Adjust font size as needed */
+    text-transform: uppercase;
+  }
+  
+  .social-link:hover {
+    text-decoration: underline; /* If you want to add a hover effect */
+  }
+  .follow-us-divider {
+    display: inline-block;
+    align-self: center;
+    width: 80%;
+    height: 2px;
+    background-color: black;
+  }
