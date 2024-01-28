@@ -1,15 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
-import Navbar from './components/navbar/navbar';
-import DisplayComponent from './components/displayComponent/displayComponent';
-import BodyText from './components/bodyText/bodyText';
-import HomePageAccordion from './components/homePageAccordion/homePageAccordion';
-import Footer from './components/footer/footer';
-import Grid from '@mui/material/Unstable_Grid2/Grid2';
+
+import Navbar from '../components/navbar/navbar';
+import DisplayComponent from '../components/displayComponent/displayComponent';
+import BodyText from '../components/bodyText/bodyText';
+import HomePageAccordion from '../components/homePageAccordion/homePageAccordion';
+import Footer from '../components/footer/footer';
 
 function App() {
   return (
-    <div className="App">
+    <>
       <Navbar />
       <DisplayComponent />
       <BodyText />
@@ -22,7 +20,7 @@ function App() {
       <HomePageAccordion title="Project Management" bodytext="LUV Studio’s project management is the process of leading the work of a team to achieve goals and meet success criteria at a specified time. The primary challenge of project management is to achieve all of the project goals within the given constraints."/>
       </div>
       <Footer />
-    </div>
+    </>
   );
 }
 

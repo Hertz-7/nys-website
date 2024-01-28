@@ -11,8 +11,8 @@ function App() {
     <div className="App">
         <Navbar/>
         <Background bg={Backimg}/>
-        <Grid container spacing={2} className='raabtabody'>
-            <Grid item xs={9} md={5}  className='text'>    
+        <Grid container spacing={2} margin={0} className='raabtabody'>
+            <Grid item xs={9} md={5} marginTop={0}  className='text'>    
                 <p className='msgtext'>Send a Message</p>
                 <p className='msgtag'>We Are Always Ready to Hear From You</p>
             </Grid>

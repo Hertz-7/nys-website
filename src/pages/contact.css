@@ -5,6 +5,7 @@
 .msgtag{
     font-size: 470%;
     font-weight: 700;
+    margin: 0;
 }
 @media (max-width: 574px){
     .msgtag{
@@ -27,7 +28,6 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    background-color: #fff;
 }
 .text{
     display: flex;
@@ -113,4 +113,5 @@
     width: 80%;
     height: 2px;
     background-color: black;
+    color: #000000;
   }

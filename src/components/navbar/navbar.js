@@ -20,7 +20,7 @@ import { RxCross1 } from "react-icons/rx";
 import PropTypes from 'prop-types';
 import Slide from '@mui/material/Slide';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
-
+import Logo from './logo.jpg';
 import './navbar.css';
 
 
@@ -227,7 +227,7 @@ function Navbar(props) {
         <AppBar  className="MuiAppBar-root" position="sticky">
           <Toolbar>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              NY
+              <img src={Logo} alt="logo" className='logo'/>
             </Typography>
             <IconButton
               size="large"
@@ -237,7 +237,7 @@ function Navbar(props) {
               sx={{ mr: 2 }}
               onClick={toggleDrawer(!drawerOpen)}
             >
-              {drawerOpen ? <RxCross1 /> : <MenuIcon />}
+              {drawerOpen ? <RxCross1 className='cross-icon'/> : <MenuIcon />}
             </IconButton>
           </Toolbar>
         </AppBar>
@@ -246,6 +246,7 @@ function Navbar(props) {
         anchor='right'
         open={drawerOpen}
         onClose={toggleDrawer(false)}
+        className='drawer'
       >
         {list()}
       </Drawer>
