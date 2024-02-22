@@ -1,0 +1,56 @@
+.pdfViewer {
+    position: relative;
+    max-width: 800px; /* Max width for larger screens */
+    width: 100%; /* Responsive width */
+    margin: auto;
+    overflow: hidden;
+  }
+  
+  .pdfViewer__nav {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+  }
+  
+  .arrow {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #000000;
+  }
+  
+  .pdfViewer__document {
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .pdfViewer__pageInfo {
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  @media (max-width: 768px) {
+    /* Adjustments for tablets and below */
+    .pdfViewer {
+      max-width: 90%;
+    }
+  
+    .arrow {
+      font-size: 20px; /* Adjust the size of the arrows if necessary */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    /* Adjustments for small devices */
+    .pdfViewer {
+      max-width: 100%;
+    }
+  
+    .pdfViewer__nav {
+      top: 45%; /* Adjust the navigation bar position */
+    }
+  }
+  
