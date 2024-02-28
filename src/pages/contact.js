@@ -3,13 +3,11 @@ import './contact.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import Background from '../components/background/bgimg';
 import Backimg from './banner.jpg'
-import Navbar from '../components/navbar/navbar';
 import Grid from '@mui/material/Unstable_Grid2/Grid2';
 import IconButton from '@mui/material/IconButton';
 function App() {
   return (
     <div className="App">
-        <Navbar/>
         <Background bg={Backimg}/>
         <Grid container spacing={2} margin={0} className='raabtabody'>
             <Grid item xs={9} md={5} marginTop={0}  className='text'>    

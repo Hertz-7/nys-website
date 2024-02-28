@@ -1,70 +1,67 @@
-import React, { useState } from "react";
-import {
-  AppBar,
-  Box,
-  Toolbar,
-  Typography,
-  IconButton,
-  Drawer,
-  Grid,
-  Link,
-  styled,
-} from "@mui/material";
+import * as React from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
+import Drawer from "@mui/material/Drawer";
+// import List from '@mui/material/List';
+// import ListItem from '@mui/material/ListItem';
+// import ListItemText from '@mui/material/ListItemText';
+// import CssBaseline from '@mui/material/CssBaseline';
+import { Grid, Link } from "@mui/material";
 import MuiAccordion from "@mui/material/Accordion";
 import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
-import { useTheme } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { RxCross1 } from "react-icons/rx";
+// import PropTypes from 'prop-types';
+// import Slide from '@mui/material/Slide';
+// import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Logo from "./logo.jpg";
 import "./navbar.css";
 
-// Custom styled Accordion components
-const Accordion = styled((props) => (
-  <MuiAccordion disableGutters elevation={0} square {...props} />
-))(({ theme }) => ({
-  borderBottom: `1px solid `,
-  borderColor: "lightgrey",
-  fontWeight: "1",
-}));
-
-const AccordionSummary = styled((props) => <MuiAccordionSummary {...props} />)(({ theme }) => ({
-  backgroundColor: "transparent",
-  color: "black",
-  fontWeight: "1",
-}));
-
-const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({}));
-
-function Navbar() {
-  const theme = useTheme();
-
-  const [drawerOpen, setDrawerOpen] = useState(false);
-  const [expanded, setExpanded] = useState(false);
-
+function Navbar(props) {
+  const [drawerOpen, setDrawerOpen] = React.useState(false);
+  const handleAccordionClick = (event) => {
+    // Stop the click event from propagating up to the Drawer's onClose handler
+    event.stopPropagation();
+  };
   const toggleDrawer = (open) => (event) => {
     if (event.type === "keydown" && (event.key === "Tab" || event.key === "Shift")) {
       return;
     }
     setDrawerOpen(open);
   };
+  const [expanded, setExpanded] = React.useState(false);
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
   };
+  const Accordion = styled((props) => (
+    <MuiAccordion disableGutters elevation={0} square {...props} />
+  ))(({ theme }) => ({
+    borderBottom: `1px solid `,
+    borderColor: "lightgrey",
+    fontWeight: "1",
+  }));
 
-  const handleAccordionClick = (event) => {
-    event.stopPropagation();
-  };
+  const AccordionSummary = styled((props) => <MuiAccordionSummary {...props} />)(({ theme }) => ({
+    backgroundColor: "transparent",
+    color: "black",
+    fontWeight: "1",
+  }));
 
-  const drawerContent = (
+  const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({}));
+  const list = () => (
     <Box
-      sx={{ width: "100%", paddingLeft: "5%", paddingRight: "5%" }} //width ka masla
+      sx={{ width: "500" }} //width ka masla
       role="presentation"
       onClick={toggleDrawer(false)}
       onKeyDown={toggleDrawer(false)}
-      marginTop={15}
+      marginTop={10}
     >
       <Grid container spacing={2}>
         {/* Left Section */}
@@ -264,39 +261,26 @@ function Navbar() {
 
   return (
     <>
-      <AppBar position="sticky">
+      <AppBar className="MuiAppBar-root" position="sticky">
         <Toolbar>
-          <Typography variant="h6" sx={{ flexGrow: 1 }}>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             <img src={Logo} alt="logo" className="logo" />
           </Typography>
           <IconButton
+            size="large"
             edge="end"
             color="inherit"
             aria-label="menu"
+            sx={{ mr: 2 }}
             onClick={toggleDrawer(!drawerOpen)}
           >
-            {drawerOpen ? <RxCross1 /> : <MenuIcon />}
+            {drawerOpen ? <RxCross1 className="cross-icon" /> : <MenuIcon />}
           </IconButton>
         </Toolbar>
       </AppBar>
 
-      <Drawer
-        sx={{
-          "& .MuiDrawer-paper": {
-            width: "100%", // Full width on smaller screens
-            lg: {
-              width: "50%", // Half width on medium and larger screens
-            },
-            md: {
-              width: "75%",
-            },
-          },
-        }}
-        anchor="right"
-        open={drawerOpen}
-        onClose={toggleDrawer(false)}
-      >
-        {drawerContent}
+      <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer(false)} className="drawer">
+        {list()}
       </Drawer>
     </>
   );

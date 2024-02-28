@@ -3,23 +3,23 @@
     display: flex;
     position: sticky;
 } */
- .MuiAppBar-root{
-    position: sticky !important;
-    /* left: 0px !important;
+.MuiAppBar-root {
+  position: sticky !important;
+  /* left: 0px !important;
     top: 0px    !important; */
-    z-index: 2000 !important; 
-    box-shadow: none !important;
-    background-color:white !important;
-    color: #000000 !important;
-}  
-.MuiLink-root{
-    text-decoration: 'none'!important;
-    display: 'block' !important; 
-    margin-bottom: '0.35rem' !important;
+  z-index: 2000 !important;
+  box-shadow: none !important;
+  background-color: white !important;
+  color: #000000 !important;
 }
-.logo{
-    width: 10%;
-    height: 60%;
-    margin-top: 0.5%;
-    margin-bottom: 0.5%;
+.MuiLink-root {
+  text-decoration: "none" !important;
+  display: "block" !important;
+  margin-bottom: "0.35rem" !important;
+}
+.logo {
+  width: 10%;
+  height: 60%;
+  margin-top: 0.5%;
+  margin-bottom: 0.5%;
 }
